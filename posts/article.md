@@ -1,5 +1,5 @@
 ---
-title: Twitch Stream about How to Publish to dev.to automatically
+title: Twitch Stream about How to Publish to dev.to automatically 2
 description: My article description
 tags: ""
 cover_image: "./subscribe_stepfunctions_graph.png"
