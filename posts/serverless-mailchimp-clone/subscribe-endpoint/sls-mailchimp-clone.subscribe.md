@@ -1,7 +1,7 @@
 ---
 title: Build a Serverless Mailchimp Clone with AWS Step Functions and Amazon Simple Email Service Part 1 - Subscribe Endpoint
-description: 'Learn how to set up a AWS Step Functions state machine, integrate with SES and API Gateway, and setting minimal permissions via IAM - from the AWS CLI - to build a subscribe endpoint for an email newsletter. Also including testing, pitfalls and troubleshooting.'
-tags: 'aws, serverless, stepfunctions, lowcode'
+description: "Learn how to set up a AWS Step Functions state machine, integrate with SES and API Gateway, and setting minimal permissions via IAM - from the AWS CLI - to build a subscribe endpoint for an email newsletter. Also including testing, pitfalls and troubleshooting."
+tags: "aws, serverless, stepfunctions, lowcode"
 cover_image: ./cover_image_subscribe_stepfunctions_graph-sheet.png
 canonical_url: null
 published: false
@@ -715,21 +715,17 @@ And with that,
 
 ## Next Steps
 
-<!-- TODO proof-read -->
-
 This is a great basis to built on top of. Here are some ideas for next steps.
 
+- refactor the code to use an Infrastructure-as-Code tool like AWS SAM or Terraform
 - add an id to the contact
   - either via SES contact's attribute data or by additionally saving the contact to a database like DynamoDB
-- handle duplicate email
-  - SES' `createContact` API fails if the email already exists.
-  - can be done by updating our existing Step Functions state machine and corresponding permissions
 - workflow to unsubscribe
   - add a separate route `GET /unsubscribe?id=12345` to unsubscribe from the newsletter
   - requires a new state machine, corresponding permissions, API route and integration
   - Ideally, we also put the unsubscribe link in each email sent to the user.
 - workflow to regularly check whether a new blog article was posted
-- workflow to send the email once a new blog article was posted
+- workflow to send the emails to all subscribers once a new blog article was posted
 
 In fact, I will implement each one and write corresponding articles about them in the next few weeks. Stay tuned!
 

@@ -1,7 +1,7 @@
 ---
 title: Twitch Stream about How to Publish to dev.to automatically 2
 description: My article description
-tags: 'test, devto'
+tags: "test, devto"
 cover_image: ./subscribe_stepfunctions_graph.png
 canonical_url: null
 published: false
@@ -22,6 +22,8 @@ canonical_url: link for the canonical version of the content
 cover_image: cover image for post, accepts a URL. The best size is 1000 x 420.
 series: post series name.
 -->
+
+<!-- IMPORTANT: When changing images without changing text, the CD pipeline might not repubish! -->
 
 Best article evah! with an image
 
