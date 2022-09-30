@@ -1,8 +1,8 @@
 ---
 title: Build a Serverless Mailchimp Clone with AWS Step Functions and Amazon Simple Email Service - Part 1 - Subscribe endpoint
-description: My article description
+description: TODO
 tags: "aws, serverless, aws step functions, lowcode"
-cover_image: "./subscribe_stepfunctions_graph.svg"
+cover_image: ""
 canonical_url: null
 published: false
 ---
@@ -19,7 +19,7 @@ You can find the full example code including all commands without the explanatio
 
 ## Target Workflow
 
-![Step Functions Graph for Subscription Workflow](./subscribe_stepfunctions_graph.svg)
+![Step Functions Graph for Subscription Workflow](./subscribe_stepfunctions_graph.png)
 
 This workflow is going to be triggered by the following HTTP request:
 
@@ -34,6 +34,8 @@ Content-Type: application/json
 
 ## Contents
 
+- [Target Workflow](#target-workflow)
+- [Contents](#contents)
 - [Motivation](#motivation)
 - [Pricing](#pricing)
 - [Prerequisites](#prerequisites)
@@ -457,11 +459,11 @@ Feel free to go to the AWS Console -> Step Functions -> State Machines -> Create
 
 It should look like to this in the visual editor:
 
-![Step Functions Graph for Subscription Workflow](./subscribe_stepfunctions_graph.svg)
+![Step Functions Graph for Subscription Workflow](./subscribe_stepfunctions_graph.png)
 
 And it should preview like this in the code editor:
 
-![Step Functions State Machine Graph for Subscription Workflow](./subscribe-stepfunctions-state-machine.svg)
+![Step Functions State Machine Graph for Subscription Workflow](./subscribe-stepfunctions-state-machine.png)
 
 One point to note is that while `TemplateData` in `aws sesv2 send-email ...` needed to be a stringified JSON, in Step Functions we can simply pass a proper JSON object and it still works! Automagically, Step Functions will stringify the JSON object for us.
 
