@@ -1,11 +1,15 @@
 ---
 title: Twitch Stream about How to Publish to dev.to automatically
 description: My article description
-tags: ''
-cover_image: ''
-canonical_url: null
+tags: ""
+cover_image: "./subscribe_stepfunctions_graph.png"
+canonical_url: mailchimp-clone-using-aws-stepfunctions-subscribe-endpoint
 published: false
 id: 1207306
 ---
 
 Best article evah!
+
+![Step Functions Graph for Subscription Workflow](./subscribe_stepfunctions_graph.png)
+
+<img src="./subscribe_stepfunctions_graph.png" alt="Step Functions Graph for Subscription Workflow">
