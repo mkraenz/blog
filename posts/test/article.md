@@ -1,7 +1,7 @@
 ---
 title: Twitch Stream about How to Publish to dev.to automatically 2
 description: My article description
-tags: "test, devto"
+tags: 'test, devto'
 cover_image: ./subscribe_stepfunctions_graph.png
 canonical_url: null
 published: false
