@@ -1,14 +1,14 @@
 ---
 title: Build a Serverless Mailchimp Clone with AWS Step Functions and Amazon Simple Email Service Part 1 - Subscribe Endpoint
-description: TODO
-tags: 'aws, serverless, stepfunctions, lowcode'
-cover_image: ''
+description: Learn how to set up a AWS Step Functions state machine, integrate with SES and API Gateway, and setting minimal permissions via IAM - from the AWS CLI - to build a subscribe endpoint for an email newsletter. Also including testing, pitfalls and troubleshooting.
+tags: "aws, serverless, stepfunctions, lowcode"
+cover_image: ""
 canonical_url: null
 published: false
 id: 1207415
 ---
 
-Today, we learn how to set up a AWS Step Functions state machine, integrating with Amazon Simple Email Service and AWS API Gateway, setting minimal permissions via AWS IAM - all from the AWS CLI for reproducability - in order to build a subscribe endpoint for an email newsletter. I will also include how to verify that everything works, as well as pitfalls and troubleshooting tips.
+Today, we learn how to set up a AWS Step Functions state machine, integrating with Amazon Simple Email Service and AWS API Gateway, and setting minimal permissions via AWS IAM - all from the AWS CLI for reproducability - in order to build a subscribe endpoint for an email newsletter. I will also include how to verify that everything works, as well as pitfalls and troubleshooting tips.
 
 We will create the `POST /subscribe` endpoint for an email newsletter service hosted on API Gateway. On a new subscriber's HTTP request, we trigger a subscription workflow, in our case, saving the new contact and sending a welcome email. The workflow is modeled using a Step Functions state machine. Managing contacts and sending email is handled via Simple Email Service.
 
