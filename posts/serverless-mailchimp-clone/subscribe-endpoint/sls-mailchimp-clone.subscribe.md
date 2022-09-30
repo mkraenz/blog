@@ -1,8 +1,8 @@
 ---
 title: Build a Serverless Mailchimp Clone with AWS Step Functions and Amazon Simple Email Service Part 1 - Subscribe Endpoint
 description: TODO
-tags: ""
-cover_image: ""
+tags: ''
+cover_image: ''
 canonical_url: null
 published: false
 id: 1207415
