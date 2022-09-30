@@ -5,7 +5,7 @@ tags: 'test, devto'
 cover_image: ./subscribe_stepfunctions_graph.png
 canonical_url: null
 published: false
-series: 'test'
+series: test
 id: 1207401
 ---
 
