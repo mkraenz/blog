@@ -11,7 +11,7 @@ id: 1207415
 
 Today, we learn how to set up a AWS Step Functions state machine, integrating with Amazon Simple Email Service and AWS API Gateway, and setting minimal permissions via AWS IAM - all from the AWS CLI for reproducability - in order to build a subscribe endpoint for an email newsletter. I will also include how to verify that everything works, as well as pitfalls and troubleshooting tips.
 
-At the end of this article, you will feel confident using the AWS CLI, Step Functions, Simple Email Service, and API Gateway HTTP APIs. You will also have a working subscribe endpoint for your email newsletter.
+At the end of this article, you will feel confident using the AWS CLI, Step Functions, Simple Email Service, and API Gateway HTTP APIs, including debugging (a point that's missed way too often). You will also have a working subscribe endpoint for your email newsletter.
 
 We will create the `POST /subscribe` endpoint for an email newsletter service hosted on API Gateway. On a new subscriber's HTTP request, we trigger a subscription workflow, in our case, saving the new contact and sending a welcome email. The workflow is modeled using a Step Functions state machine. Managing contacts and sending email is handled via Simple Email Service.
 
@@ -359,7 +359,7 @@ As before, be sure to replace `YOUR_ACCOUNT_ID` and `YOUR_REGION` in the JSON.
 
 Note that we reuse the template name `WelcomeTemplate`, and the contact list `EmailNewsletter` that we've created earlier. If you've changed any of the names in a previous step, be sure to adjust these values, too.
 
-Second, create the following trust policy, so the Step Function can assume the role. If you use the web interface AWS Console to create a Step Functions state machine, this would be created automatically for you. This allows our Step Function to use the role we attach to it, and, by extension, use the permissions to get access to SES. As filename we choose `stepfunctions-newsletter-subscribe.trust-policy.json`.
+Second, create the following trust policy, so the Step Functions state machine can assume the role. If you use the web interface AWS Console to create a Step Functions state machine, this would be created automatically for you. This allows our state machine to use the role we attach to it, and, by extension, use the permissions to get access to SES. As filename we choose `stepfunctions-newsletter-subscribe.trust-policy.json`.
 
 ```json
 {
@@ -469,7 +469,7 @@ And it should preview like this in the code editor:
 
 ![Step Functions State Machine Graph for Subscription Workflow](./subscribe-stepfunctions-state-machine.png)
 
-One point to note is that while `TemplateData` in `aws sesv2 send-email ...` needed to be a stringified JSON, in Step Functions we can simply pass a proper JSON object and it still works! Automagically, Step Functions will stringify the JSON object for us.
+One point to note is that while `TemplateData` in `aws sesv2 send-email ...` needed to be a stringified JSON, in Step Functions we can simply pass a proper JSON object and it still works! Automagically Step Functions will stringify the JSON object for us.
 
 We will now use the [create-state-machine](https://docs.aws.amazon.com/cli/latest/reference/stepfunctions/create-state-machine.html) endpoint to deploy the state machine.
 
@@ -572,7 +572,7 @@ aws apigatewayv2 create-stage \
     --auto-deploy
 ```
 
-Thanks to `--auto-deploy` our changes to the API will always be deployed automatically. This is great for development, but you might want to disable this in production.
+Thanks to `--auto-deploy` our changes to the API will automatically become available to API clients. This is great for development, but you might want to disable this in production.
 
 ### Create a route and call the Step Functions state machine
 
