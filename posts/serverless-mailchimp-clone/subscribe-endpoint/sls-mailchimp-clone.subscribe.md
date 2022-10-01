@@ -11,6 +11,8 @@ id: 1207415
 
 Today, we learn how to set up a AWS Step Functions state machine, integrating with Amazon Simple Email Service and AWS API Gateway, and setting minimal permissions via AWS IAM - all from the AWS CLI for reproducability - in order to build a subscribe endpoint for an email newsletter. I will also include how to verify that everything works, as well as pitfalls and troubleshooting tips.
 
+At the end of this article, you will feel confident using the AWS CLI, Step Functions, Simple Email Service, and API Gateway HTTP APIs. You will also have a working subscribe endpoint for your email newsletter.
+
 We will create the `POST /subscribe` endpoint for an email newsletter service hosted on API Gateway. On a new subscriber's HTTP request, we trigger a subscription workflow, in our case, saving the new contact and sending a welcome email. The workflow is modeled using a Step Functions state machine. Managing contacts and sending email is handled via Simple Email Service.
 
 To do this, we first setup Simple Email Service and get comfortable using it. Then, we build the workflow with Step Functions including setting up permissions. Finally, we setup the `POST /subscribe` endpoint on API Gateway, link it to Step Functions using an Integration, and again, set up permissions. As a bonus, we enable CORS on our new API so that the blog can make an http post request to subscribe the reader using JavaScript.
@@ -66,11 +68,11 @@ Content-Type: application/json
 
 ## Motivation
 
-A little while ago, a good friend of mine said she wanted to add an email newsletter to her blog to stay in contact with her readers. Whenever she publishes a new blog article, an email should be sent to her newsletter subscribers informing them about the new article and inviting them to read the article on her blog.
+Some time ago, a friend of mine said she wants to add an email newsletter to her blog to stay in close contact with her readers. Whenever she publishes a new blog article, an email should be sent to her newsletter subscribers informing them about the new article and inviting them to read the article on her blog.
 
-Since she still has a fairly small followership she does't want to pay the monthly fee for services like [MailChimp](https://mailchimp.com/) yet. On the other hand, the free tier of Mailchimp only allows to send emails with the MailChimp logo in the footer - which doesn't look too great.
+Since she still has a fairly small followership she doesn't want to pay the monthly fee for services like [MailChimp](https://mailchimp.com/). The free tier of Mailchimp however only allows to send emails with the MailChimp logo in the footer - which doesn't look too great.
 
-Fitting my objective of getting deeper into Serverless Computing, particularly AWS Step Functions, I decided to build this in our Twitch stream, the [TypeScriptTeatime](https://www.twitch.tv/typescriptteatime). You can watch everything using this [video playlist](https://www.twitch.tv/collections/gsh4RG33FheZdw).
+Fitting my goal of diving deeper into Serverless Computing, particularly AWS Step Functions for orchestration, I decided to build this in our Twitch stream, the [TypeScriptTeatime](https://www.twitch.tv/typescriptteatime). You can watch everything using this [video playlist](https://www.twitch.tv/collections/gsh4RG33FheZdw).
 
 Why serverless? Serverless Computing provides us with the benefit that as long as usage is low, we have close-to-zero operative costs. Further, the approach is future proof as our infrastructure will automatically scale to large numbers of users without any further work needed. Step Functions is very useful in making our workflow visible which helps in communication. Be aware though that there is an important disadvantage to our approach - there is no visual editor to build the email templates.
 
@@ -83,8 +85,8 @@ As an example, if you publish a blog article every day, then 1 Dollar covers the
 ## Prerequisites
 
 - AWS account. If you don't have an account yet, you can create one here via the [AWS website](https://aws.amazon.com/).
-- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) installed and configured (I tested this with `aws-cli/2.7.31 Python/3.9.11` on Ubuntu Linux)
-- Access permissions on your user (I tested with `AdministratorAccess` policy. `PowerUserAccess` does not suffice since at least the `iam:CreateRole` permission is missing.)
+- [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) installed and configured (I tested with `aws-cli/2.7.31 Python/3.9.11` on Ubuntu Linux)
+- Access permissions on your user (I tested with `AdministratorAccess` policy.)
 - default profile and default region set in your AWS CLI config
 
 If you don't want to setup default profile and region, you can pass the `--profile YOUR_PROFILE` and `--region YOUR_REGION` flags to each of the AWS CLI commands. But it's definitely more comfortable to use defaults.
@@ -727,7 +729,7 @@ This is a great basis to built on top of. Here are some ideas for next steps.
 - workflow to regularly check whether a new blog article was posted
 - workflow to send the emails to all subscribers once a new blog article was posted
 
-In fact, I will implement each one and write corresponding articles about them in the next few weeks. Stay tuned!
+In fact, I've implemented each one of these already. If you don't want to wait for the next article in this blog series, you can watch the full series of live streams on Twitch from this [playlist](https://www.twitch.tv/collections/gsh4RG33FheZdw). The final code leveraging AWS SAM is available on [Github](https://github.com/mkraenz/typescript-teatime/tree/main/e90-aws-textract/blog/3-of-x-should-send-newsletter/sam).
 
 ## Cleanup
 
@@ -757,7 +759,7 @@ aws sesv2 delete-email-identity --email-identity $SENDER_EMAIL_ADDRESS
 
 ## Closing
 
-That's it for now. I hope you enjoyed this post. If you have any questions or comments, please leave them below. For more AWS content, join my Twitch Live Coding streams, the [TypeScriptTeatime](https://www.twitch.tv/typescriptteatime). Looking forward to see you!
+That's it for now. I hope you enjoyed this post. If you have any questions or comments, please leave them below. For more AWS content, join my Twitch Live Coding streams at [TypeScriptTeatime](https://www.twitch.tv/typescriptteatime). Looking forward to see you!
 
 ## References
 
