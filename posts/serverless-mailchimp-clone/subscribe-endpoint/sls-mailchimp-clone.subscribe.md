@@ -759,7 +759,7 @@ aws sesv2 delete-email-identity --email-identity $SENDER_EMAIL_ADDRESS
 
 ## Closing
 
-That's it for now. I hope you enjoyed this post. If you have any questions or comments, please leave them below. For more AWS content, join my Twitch Live Coding streams at [TypeScriptTeatime](https://www.twitch.tv/typescriptteatime). Looking forward to see you!
+That's it for now. I hope you enjoyed this post. If you have any questions, comments, or suggestions, please leave them below. For more AWS content, join my Twitch Live Coding streams at [TypeScriptTeatime](https://www.twitch.tv/typescriptteatime). Looking forward to see you!
 
 ## References
 
