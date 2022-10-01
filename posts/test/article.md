@@ -10,6 +10,7 @@ id: 1207401
 ---
 
 <!-- the preamble is called frontmatter. See docs at https://dev.to/p/editor_guide#front-matter -->
+<!-- The deployment tool we use is https://github.com/sinedied/devto-cli -->
 
 <!--
 from the front-matter docs:
