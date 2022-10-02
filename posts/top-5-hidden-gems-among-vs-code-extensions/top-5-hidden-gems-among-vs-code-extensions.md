@@ -1,8 +1,8 @@
 ---
 title: Top 5 Hidden Gems among VS Code Extensions
 description: TODO
-tags: "typescript, javascript, vscode"
-cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--D3t6KdBd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3yzspddr8hbaq6pksosa.png"
+tags: 'typescript, javascript, vscode'
+cover_image: 'https://res.cloudinary.com/practicaldev/image/fetch/s--D3t6KdBd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3yzspddr8hbaq6pksosa.png'
 published: false
 id: 709305
 ---

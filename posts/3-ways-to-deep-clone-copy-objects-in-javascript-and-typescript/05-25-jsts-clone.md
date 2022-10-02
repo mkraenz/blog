@@ -1,8 +1,8 @@
 ---
 title: 3 Ways To Deep Clone / Copy Objects In JavaScript And TypeScript
 description: TODO
-tags: "typescript, javascript"
-cover_image: ""
+tags: 'typescript, javascript'
+cover_image: ''
 published: false
 id: 709324
 ---

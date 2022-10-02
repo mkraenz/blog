@@ -1,9 +1,10 @@
 ---
 title: Anki Flashcards on Steroids
 description: TODO
-tags: "learning, anki"
-cover_image: ""
+tags: 'learning, anki'
+cover_image: ''
 published: false
+id: 1209020
 ---
 
 TODO Intro
