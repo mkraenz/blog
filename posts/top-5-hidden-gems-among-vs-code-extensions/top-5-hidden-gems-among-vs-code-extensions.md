@@ -1,17 +1,21 @@
-# Top 5 Hidden Gems VS Code Extensions
+---
+title: Top 5 Hidden Gems among VS Code Extensions
+description: TODO
+tags: "typescript, javascript, vscode"
+cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--D3t6KdBd--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3yzspddr8hbaq6pksosa.png"
+published: false
+id: 709305
+---
 
-Image: VS Code `vscode.png`
-Tags: typescript, javascript, vscode
-
-Visual Studio Code is a great editor in itself. Paired with the power of plugins and extension it transforms into heaven for every developer. Today, I'll introduce you my Top 5 not-so-well-known plugins which I'm sure will make your life a lot easier.
+Visual Studio Code is a great editor in itself. Paired with the power of plugins and extension it transforms into heaven for every developer. Today, I'll share with you my Top 5 not-so-well-known plugins which I'm sure will make your life a lot easier.
 
 ## tl;dr
 
-- [Anki for VSCode](https://marketplace.visualstudio.com/items?itemName=jasew.anki)
-- [Diff Folders](https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-diff)
-- [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff)
-- [Bracketeer](https://marketplace.visualstudio.com/items?itemName=pustelto.bracketeer)
-- [Copy Relative Path and Line Numbers](https://marketplace.visualstudio.com/items?itemName=ezforo.copy-relative-path-and-line-numbers)
+- [Anki for VSCode](https://marketplace.visualstudio.com/items?itemName=jasew.anki) - flashcard creation from markdown with code snippet support
+- [Diff Folders](https://marketplace.visualstudio.com/items?itemName=L13RARY.l13-diff) - git diff on folders
+- [Partial Diff](https://marketplace.visualstudio.com/items?itemName=ryu1kn.partial-diff) - git diff your clipboard and selected text
+- [Bracketeer](https://marketplace.visualstudio.com/items?itemName=pustelto.bracketeer) - change brackets and quotes with ease
+- [Copy Relative Path and Line Numbers](https://marketplace.visualstudio.com/items?itemName=ezforo.copy-relative-path-and-line-numbers) - `Alt + L` to copy
 
 ## Anki for VSCode
 
@@ -20,12 +24,13 @@ If you've tried learning some new language, you probably know [Anki](https://app
 Then came [Anki for VSCode](https://marketplace.visualstudio.com/items?itemName=jasew.anki)! All I write now is regular Markdown and it gets send to Anki without me touching my computer mouse! Love it. In particular, Markdown gets formatted on save thanks to another VS Code plugin ([markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)).
 I only open the Anki Desktop App for 2 seconds when I want to send my flashcards in markdown to Anki. Here's an example flashcard with front `ts union type` and backside `number | string` which gets send to the `Informatics` deck.
 
-```markdown
+````markdown
 # Informatics
 
 ## ts union type
 
-`number | string`
+```ts
+type MyUnion = number | string;
 ```
 
 ## Diff Folders
@@ -57,8 +62,9 @@ Sometimes, simple things are also the best. For communication, I often want to q
 
 ## Closing
 
-Wanna learn more about VS Code? Hit subscribe on the blog, and join our [Twitch TypeScriptTeatime](https://www.twitch.tv/typescriptteatime/schedule) for Live Coding! Looking forward to see you!
+Wanna learn more about VS Code? Hit subscribe on the blog, and join our [Twitch TypeScriptTeatime](https://www.twitch.tv/typescriptteatime/schedule) for Live Coding Fun! Looking forward to see you!
 
 ## Recommended Reading
 
-[BaldBeardedBuilder](https://www.twitch.tv/baldbeardedbuilder) has an amazing article [10 VS Code Extensions You Need Today](https://michaeljolley.com/blog/10-visual-studio-code-extensions-you-need-today/). I happened to use 7 out of 10 extensions he listed so the article has my fullest support. Check it out and spread some developer love. 💚
+[BaldBeardedBuilder](https://www.twitch.tv/baldbeardedbuilder) has an amazing article [10 VS Code Extensions You Need Today](https://michaeljolley.com/blog/10-visual-studio-code-extensions-you-need-today/). I already used 7 out of 10 so the article has my fullest support. Check it out and spread some developer love. 💚
+````

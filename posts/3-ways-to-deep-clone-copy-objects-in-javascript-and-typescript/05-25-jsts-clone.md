@@ -1,7 +1,11 @@
-# 3 Ways To Deep Clone / Copy Objects In JavaScript And TypeScript
-
-Image: TODO
-Tags: typescript, javascript
+---
+title: 3 Ways To Deep Clone / Copy Objects In JavaScript And TypeScript
+description: TODO
+tags: "typescript, javascript"
+cover_image: ""
+published: false
+id: 709324
+---
 
 Cloning (aka copying) objects is a common task in programming. JS and TS provide multiple ways to achieve this. Let's take a look at 3 common ways to deep copy an object.
 

@@ -1,6 +1,11 @@
-# Mongoose lingo for MongoDB users
-
-![Mongoose terminology chart](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0jq8wlcjgx7u5ch665l5.png)
+---
+title: Mongoose lingo for MongoDB users
+description: TODO
+tags: "mongodb, javascript, typescript, database"
+cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--kKx_qBMC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ztdklh7uow70ydussr1.png"
+published: false
+id: 696525
+---
 
 You feel comfortable with MongoDB and want to add structure, validation, and documentation to your database layer? [Mongoose](https://mongoosejs.com/) to the rescue! It does come, however, with it's own technical terms.
 
@@ -8,7 +13,7 @@ Let's explore these terms and their relation to MongoDB concepts to get you jump
 
 ## tl;dr
 
-Checkout the mindmap at the top.
+Checkout the mindmap on the top.
 
 ## MongoDB basics
 
@@ -100,9 +105,7 @@ We have a simplified version of our `teaSchema` from before but this time it con
 
 The leafs of this schema are `taste`, `name`, and `sellerId`. The corresponding paths are `taste`, `producer.name`, and `producer.sellerId`. Since `producer` is _not_ a leaf of the tree there is no _schema path_ for the `producer` even though it is still a _schema property_.
 
-## Closing
-
-Wanna learn more about Mongoose? Hit subscribe on the blog, and join our [Twitch TypeScriptTeatime](https://www.twitch.tv/typescriptteatime/schedule) for Live Coding Fun! Looking forward to see you!
+Thanks for your time!
 
 ## Recommended Reading
 

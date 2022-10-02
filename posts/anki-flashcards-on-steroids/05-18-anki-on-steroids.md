@@ -1,4 +1,10 @@
-# Anki Flashcard App is on FIIIIIRE
+---
+title: Anki Flashcards on Steroids
+description: TODO
+tags: "learning, anki"
+cover_image: ""
+published: false
+---
 
 TODO Intro
 
