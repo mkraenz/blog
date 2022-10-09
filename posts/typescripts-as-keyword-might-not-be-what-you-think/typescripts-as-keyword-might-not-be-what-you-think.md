@@ -1,6 +1,6 @@
 ---
-title: TypeScript's `as` keyword might not be what you think
-description: Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime.
+title: "TypeScript's `as` keyword might not be what you think"
+description: "Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime."
 tags: 'typescript, javascript'
 cover_image: typescript-cover_image.png
 published: false
@@ -13,7 +13,7 @@ So what does `as string` or more generally `as MyType` actually do? And how do I
 
 # tl;dr
 
-`as` keyword only changes _compile_-time behavior. You essentially tell the compiler to stop complaining. Runtime behavior stays unchanged. If you need runtime safety, use techniques like polymorphism, `in`, `typeof`, or `instanceof` type guards, user-defined type guards, or assertion functions.
+`as` keyword only changes _compile_-time behavior. You essentially tell the compiler to stop complaining. Runtime behavior stays unchanged. If you need runtime safety, use techniques like polymorphism, `in` type guards, `typeof` typeguards, `instanceof` type guards, or user-defined type guards, or assertion functions.
 
 # Contents
 
