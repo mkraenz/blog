@@ -11,7 +11,7 @@ Agile / Lean / DevOps
 
 - Cagan - "Inspired" - the project manager's Bible
 - Ries - "The Lean StartUp" - agile and lean product development philosophy
-- DevOps Handbook
+- DevOps Handbook - aka "The Good Book" or "The DevOps Bible"
 - Lencioni - "5 Dysfunctions of a Team" - Leadership bible
 
 General
