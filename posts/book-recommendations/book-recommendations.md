@@ -1,8 +1,8 @@
 ---
 title: Book Recommendations
 description: TODO
-tags: ""
-cover_image: ""
+tags: ''
+cover_image: ''
 published: false
 id: 1040170
 ---

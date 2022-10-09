@@ -1,8 +1,8 @@
 ---
 title: Mongoose lingo for MongoDB users
 description: TODO
-tags: "mongodb, javascript, typescript, database"
-cover_image: "https://res.cloudinary.com/practicaldev/image/fetch/s--kKx_qBMC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ztdklh7uow70ydussr1.png"
+tags: 'mongodb, javascript, typescript, database'
+cover_image: 'https://res.cloudinary.com/practicaldev/image/fetch/s--kKx_qBMC--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0ztdklh7uow70ydussr1.png'
 published: false
 id: 696525
 ---
