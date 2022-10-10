@@ -1,7 +1,7 @@
 ---
-title: TypeScript's `as` keyword might not be what you think
-description: Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime.
-tags: 'typescript, javascript'
+title: "TypeScript's `as` keyword might not be what you think"
+description: "Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime."
+tags: "typescript, javascript"
 cover_image: typescript-cover_image.png
 published: false
 id: 702771
@@ -23,14 +23,14 @@ So what does `as string` or more generally `as MyType` actually do? And how do I
 - [Type Guards](#type-guards)
   - [`in` Type Guard](#in-type-guard)
   - [`instanceof` Type Guard](#instanceof-type-guard)
-  - [User-Defined Type Guard](#user-defined-type-guard)
-  - [TypeScript trusts us in writing proper User-Defined Type Guards](#typescript-trusts-us-in-writing-proper-user-defined-type-guards)
+  - [User-Defined Type Guard](#userdefined-type-guard)
+  - [TypeScript trusts us in writing proper User-Defined Type Guards](#ts-trusts-us-in-writing-proper-userdefined-type-guards)
 - [What about `<MyType>`?](#what-about-mytype)
-- [What about the new `satisfies`?](#what-about-the-new-satisfies)
+- [What about the new `satisfies` keyword?](#what-about-satisifies)
 - [Closing](#closing)
 - [Recommended Reading](#recommended-reading)
 
-# What `as string` actually does
+# What `as string` actually does <a name="what-as-string-actually-does"></a>
 
 Or: _Type Assertion_ vs _Type Casting_.
 
@@ -112,7 +112,7 @@ actuallyCoffee.add("lemon"); // compile error: '"lemon"' is not assignable to pa
 
 Type Guards are similar to `as` in terms of changing the compile type but additionally add a _runtime check_! Note however that since oftentimes we're writing the type guard ourselves, there is still some risk of getting it wrong. So be careful and add unit tests when using more advanced type guards. Let's get started with the most common type guard. The following list is not exhaustive but each one I showcase fixes our problem-case above.
 
-## `in` Type Guard
+## `in` Type Guard <a name="in-type-guard"></a>
 
 [Interactive TypeScript Playground here](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgCoTsg3gKGcuAE0IBkIBbAexAAoBKALmQDdLhCBuHAXx1EliIUAYUowYEFLnxFCAZQCuAczhR6TVuy68cMBSARhg1AsQCiADzBQ4NABaUwAIQjNocJRCbpMAH2Si4pJ02HjIwDDINABEsmRUINHhIMgOzq7uniHS+KmOLm42ngB0cRTU9BzIAPTVaHLIIKpQlADuAM7IhG0pYHYoYACeAA4DlGgYYdzIEAA27VJh+GkFmRClxIoqanRVtfWNzW2d3a29-chDo5fjgRIQUzw4OAjU7WAEhgpws7ODd5ImACUABeUIyTbKVRMejIEEAPnBuVeIHalFm61mlCUMVkEEIyHaUKg0V2UwANDwuDhZJZrLZEGBvr9-mJ7rsanVZJ0idtkK1gH1KAoPnAQIMZlAWlB2kA)
 
@@ -143,7 +143,7 @@ addExtra(actuallyCoffee); // adds sugar without any errors
 
 The `in` keyword in JavaScript and TypeScript checks whether a property exists on an object. In the above example, we use it to check whether the `addLemon` property exists on the `hotBeverage` object _at compile time and at runtime_. If it does, TypeScript know it's a `Tea` because the other option `Coffee` does not have an `addLemon` property. On the other hand, if the object does not have an `addLemon` property it must be `Coffee`. Unlike `as`, since `in` is a JavaScript keyword it acts at runtime, too.
 
-## `instanceof` Type Guard
+## `instanceof` Type Guard <a name="instanceof-type-guard"></a>
 
 This type guard is only usable if `Tea` or `Coffee` are classes. In the above case, they are only interfaces. Let's pretend for a moment that Tea is a class anyway. In this case, we can use the `instanceof` type guard.
 
@@ -176,7 +176,7 @@ const actuallyCoffee: Coffee = {
 addExtra(actuallyCoffee); // adds sugar without any errors
 ```
 
-## User-Defined Type Guard
+## User-Defined Type Guard <a name="userdefined-type-guard"></a>
 
 User-Defined Type Guards allow us to go beyond what TypeScript can infer from `instanceof` and `in` type guards.
 
@@ -217,7 +217,7 @@ addExtra(actuallyCoffee); // adds sugar without any errors
 
 The type guard `isTea` is a function that receives a single parameter, returns a boolean, and is marked with `x is Tea`. More generally, it's marked with `myParameter is MyType`. TypeScript will use it to narrow down the type in the `if-statement` of `addExtra`
 
-## TypeScript trusts us in writing proper User-Defined Type Guards
+## TypeScript trusts us in writing proper User-Defined Type Guards <a name="ts-trusts-us-in-writing-proper-userdefined-type-guards"></a>
 
 The fact that TypeScript trusts us in implementing a proper user-defined type guard can be shown easily.
 Take a look at the following, obviously wrong type guard. TypeScript believes in our abilities and won't budge - the executed JavaScript will.
@@ -238,7 +238,7 @@ if (isTea(grizzlyBear)) {
 
 This simply says everything is `Tea`. Even though it would be a nice world to live in, that's not how it works in real life. 🙂
 
-# What about `<MyType>`?
+# What about `<MyType>`? <a name="what-about-mytype"></a>
 
 You might have seen Type Assertions in the form `const tea = <Tea>{color: 'green'}` before. This is the same as `as Tea`. So again, it doesn't change any runtime behavior, leaving ourselves open for bad surprises.
 
@@ -256,11 +256,11 @@ return <Tea>{beverage.color}</Tea>
 Here we have a _component_ named `Tea` but also a variable `beverage` with a type assertion of _type_ `Tea`. If you are confused now, that's intended. 🙃 With `as Tea` it's slightly easier to identify whether we talk about a component or a type:
 
 ```ts
-const beverage = { color: 'green' } as Tea;
-return <Tea>{beverage.color}</Tea>
+const beverage = { color: "green" } as Tea;
+return <Tea>{beverage.color}</Tea>;
 ```
 
-# What about the new `satisfies`?
+# What about the new `satisfies` keyword? <a name="what-about-satisifies"></a>
 
 The upcoming [TypeScript 4.9](https://devblogs.microsoft.com/typescript/announcing-typescript-4-9-beta/#hamilton) brings in the new keyword `satisfies`. Functionally, it acts very similar to `as` with the additional benefit of not broadening the type to something more generic. For us, the important lesson here is that `satisfies` leaves us _just as open to runtime errors_ as `as` does. So be careful!
 
