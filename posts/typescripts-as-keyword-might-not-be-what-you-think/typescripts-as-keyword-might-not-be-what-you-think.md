@@ -1,6 +1,6 @@
 ---
-title: TypeScript's `as` keyword might not be what you think
-description: Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime.
+title: "TypeScript's `as` keyword might not be what you think"
+description: "Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime."
 tags: 'typescript, javascript'
 cover_image: typescript-cover_image.png
 published: false
@@ -253,11 +253,11 @@ const beverage = <Tea>{ color: 'green' };
 return <Tea>{beverage.color}</Tea>
 ```
 
-Here we have a _component_ named `Tea` but also a variable `beverage` with a type assertion of _type_ `Tea`. If you are confused now, that's intended. 🙃 With `as Tea` it's arguably easier to identify whether we talk about a component or a type.
+Here we have a _component_ named `Tea` but also a variable `beverage` with a type assertion of _type_ `Tea`. If you are confused now, that's intended. 🙃 With `as Tea` it's slightly easier to identify whether we talk about a component or a type:
 
 ```ts
-const tea = {} as Tea;
-return <Tea>{tea}</Tea>;
+const beverage = { color: 'green' } as Tea;
+return <Tea>{beverage.color}</Tea>
 ```
 
 # What about the new `satisfies`?
