@@ -1,10 +1,11 @@
 ---
-title: "TypeScript's `as` keyword might not be what you think"
-description: "Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime."
+title: TypeScript's `as` keyword might not be what you think
+description: Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime.
 tags: 'typescript, javascript'
 cover_image: typescript-cover_image.png
 published: true
 id: 702771
+date: '2022-10-10T11:22:00Z'
 ---
 
 I've done a lot of interviews on the interviewer-side a little while ago and one thing surprised me:
