@@ -1,6 +1,6 @@
 ---
-title: TypeScript's `as` keyword might not be what you think
-description: Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime.
+title: "TypeScript's `as` keyword might not be what you think"
+description: "Let's explore the `as` keyword in TypeScript and see how you can use it to stay safe at compile time and runtime."
 tags: 'typescript, javascript'
 cover_image: typescript-cover_image.png
 published: true
@@ -9,7 +9,7 @@ date: '2022-10-10T11:22:00Z'
 ---
 
 I've done a lot of interviews on the interviewer-side a little while ago and one thing surprised me:
-Many developers get the concept of `as string` in TypeScript wrong; thinking they are save now that they use it - but really aren't. 😕
+Many developers get the concept of `as string` in TypeScript wrong; thinking they are safe now that they use it - but really aren't. 😕
 So what does `as string` or more generally `as MyType` actually do? And how do I fill the gap it leaves?
 
 # tl;dr
@@ -150,7 +150,7 @@ addExtra(actuallyCoffee); // adds sugar without any errors
 
 The `in` keyword in JavaScript and TypeScript checks whether a property exists on an object. In the above example, we use it to check whether the `addLemon` property exists on the `hotBeverage` object _at compile time and at runtime_. If it does, TypeScript know it's a `Tea` because the other option `Coffee` does not have an `addLemon` property. On the other hand, if the object does not have an `addLemon` property it must be `Coffee`. Unlike `as`, since `in` is a JavaScript keyword it acts at runtime, too.
 
-<a name="instanceof-type-guard"></a>s
+<a name="instanceof-type-guard"></a>
 
 ## `instanceof` Type Guard
 
